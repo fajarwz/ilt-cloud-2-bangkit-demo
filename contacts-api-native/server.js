@@ -53,7 +53,7 @@ const contacts = require("./contacts");
     }
   });
 
-  server.listen(3000, 'localhost', () => {
-    console.log('Server running on http://localhost:3000');
+  server.listen(5000, process.env.NODE_ENV !== 'production' ? 'localhost' : '0.0.0.0', () => {
+    console.log(`Server running on http://${process.env.NODE_ENV !== 'production' ? 'localhost' : '0.0.0.0'}:5000`);
   });
 })();
